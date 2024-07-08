@@ -28,7 +28,7 @@ const HomePage = () => {
             <Image src="/images/logo.png" alt="Logo" width={40} height={40} className="mr-4" />
             <h1 className="text-3xl font-bold font-old-london">The Genio.soy Post</h1>
           </div>
-          <p className="text-gray-500 text-sm italic">"Si no está en Internet, no existe."</p>
+          <p className="text-gray-500 text-sm italic">&quot;Si no está en Internet, no existe.&quot;</p>
         </div>
       </header>
       <main className="pt-24 container mx-auto p-4">
