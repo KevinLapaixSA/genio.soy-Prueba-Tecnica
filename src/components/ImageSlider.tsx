@@ -26,12 +26,17 @@ const ImageSlider: React.FC<Props> = ({ posts }) => {
   };
 
   const images = posts
-    .filter(post => post.featuredMedia)
-    .map(post => (
-      <div key={post.id}>
-        <img src={post.featuredMedia} alt={post.title.rendered} className="w-full h-64 object-cover" />
-      </div>
-    ));
+  .filter(post => post.featuredMedia !== null)
+  .map(post => (
+    <div key={post.id}>
+      <img
+        src={post.featuredMedia as string}
+        alt={post.title.rendered}
+        className="w-full h-64 object-cover"
+      />
+    </div>
+  ));
+
 
   return <Slider {...settings}>{images}</Slider>;
 };
