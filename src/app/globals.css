@@ -2,32 +2,237 @@
 @tailwind components;
 @tailwind utilities;
 
-:root {
-  --foreground-rgb: 0, 0, 0;
-  --background-start-rgb: 214, 219, 220;
-  --background-end-rgb: 255, 255, 255;
+/* Fuente Personalizada */
+@font-face {
+  font-family: 'Old London';
+  src: url('/fonts/OldLondonAlternate.ttf') format('truetype');
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --foreground-rgb: 255, 255, 255;
-    --background-start-rgb: 0, 0, 0;
-    --background-end-rgb: 0, 0, 0;
-  }
-}
+/* Importación de estilos de slick-carousel */
+@import 'slick-carousel/slick/slick.css';
+@import 'slick-carousel/slick/slick-theme.css';
 
+/* Estilos globales */
 body {
-  color: rgb(var(--foreground-rgb));
-  background: linear-gradient(
-      to bottom,
-      transparent,
-      rgb(var(--background-end-rgb))
-    )
-    rgb(var(--background-start-rgb));
+  @apply bg-gray-100;
 }
 
-@layer utilities {
-  .text-balance {
-    text-wrap: balance;
-  }
+.container {
+  @apply mx-auto max-w-7xl;
+}
+
+.font-old-london {
+  font-family: 'Old London', serif;
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+}
+
+/* Clases Utilitarias */
+.justify-center {
+  justify-content: center;
+}
+
+.items-center {
+  align-items: center;
+}
+
+.h-screen {
+  height: 100vh;
+}
+
+.space-x-8 {
+  gap: 2rem;
+}
+
+.mb-8 {
+  margin-bottom: 2rem;
+}
+
+.mb-4 {
+  margin-bottom: 1rem;
+}
+
+.object-cover {
+  object-fit: cover;
+}
+
+/* Clases de Color y Tipografía */
+.text-gray-500 {
+  color: #6b7280;
+}
+
+.text-white {
+  color: white;
+}
+
+.text-black {
+  color: black;
+}
+
+.bg-black {
+  background-color: black;
+}
+
+.bg-white {
+  background-color: white;
+}
+
+.text-3xl {
+  font-size: 1.875rem;
+  line-height: 2.25rem;
+  font-weight: 700;
+}
+
+.font-bold {
+  font-weight: 700;
+}
+
+.ml-2 {
+  margin-left: 0.5rem;
+}
+
+.ml-4 {
+  margin-left: 1rem;
+}
+
+/* Clases de Espaciado */
+.p-4 {
+  padding: 1rem;
+}
+
+.mt-4 {
+  margin-top: 1rem;
+}
+
+/* Clases Flex */
+.flex {
+  display: flex;
+}
+
+.flex-col {
+  flex-direction: column;
+}
+
+.flex-row {
+  flex-direction: row;
+}
+
+.justify-between {
+  justify-content: space-between;
+}
+
+.items-center {
+  align-items: center;
+}
+
+.h-auto {
+  height: auto;
+}
+
+/* Clases de Bordes */
+.rounded-lg {
+  border-radius: 0.5rem;
+}
+
+.shadow-lg {
+  box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
+}
+
+/* Estilos específicos para el PostDetail */
+.post-header {
+  display: flex;
+  align-items: center;
+  background-color: black;
+  color: white;
+  padding: 16px;
+  border-radius: 8px;
+}
+
+.post-header h2 {
+  flex: 1;
+  margin-right: 16px;
+  font-size: 2rem;
+}
+
+.post-header img {
+  width: 200px;
+  height: auto;
+  border-radius: 8px;
+}
+
+.post-content {
+  margin-top: 16px;
+}
+
+/* Estilos para imágenes en el contenido del post */
+.post-content .post-image {
+  width: 60%;
+  margin: 16px 0;
+  border-radius: 8px;
+}
+
+.post-content img {
+  display: block;
+  margin: 0 auto;
+  border-radius: 8px;
+}
+
+.post-content img:not(:first-of-type) {
+  margin-top: 16px;
+  margin-bottom: 16px;
+  width: 60%;
+  border-radius: 8px;
+}
+
+.post-content .image-wrapper {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+/* Estilos para el modal de imagen */
+.fixed {
+  position: fixed;
+}
+
+.inset-0 {
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+}
+
+.bg-black {
+  background-color: black;
+}
+
+.z-50 {
+  z-index: 50;
+}
+
+.rounded-lg {
+  border-radius: 0.5rem;
+}
+
+.max-w-full {
+  max-width: 100%;
+}
+
+.max-h-full {
+  max-height: 100%;
+}
+
+.cursor-pointer {
+  cursor: pointer;
+}
+
+/* Estilos para enlaces de navegación de posts */
+.text-pink-500 {
+  color: #eb0055;
+}
+.transition {
+  transition: color 0.3s;
 }
