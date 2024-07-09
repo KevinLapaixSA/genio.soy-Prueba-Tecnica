@@ -8,6 +8,9 @@ interface Props {
 
 const Layout: React.FC<Props> = ({ children }) => (
   <html lang="en">
+    <head>
+      <link rel="icon" href="/images/favicon.ico" type="image/x-icon" />
+    </head>
     <body className="min-h-screen bg-gray-100">
       <noscript>
         <iframe
