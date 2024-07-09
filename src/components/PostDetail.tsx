@@ -18,11 +18,18 @@ const PostDetail: React.FC<PostDetailProps> = ({ post }) => {
     const contentElement = document.getElementById('post-content');
     if (contentElement) {
       const images = contentElement.getElementsByTagName('img');
-      for (let i = 1; i < images.length; i++) {
+      for (let i = 0; i < images.length; i++) {
         const wrapper = document.createElement('div');
-        wrapper.className = 'image-wrapper';
+        wrapper.className = 'image-wrapper my-4';
+        wrapper.style.textAlign = 'center';
+        images[i].style.margin = '0 auto';
         images[i].parentNode?.insertBefore(wrapper, images[i]);
         wrapper.appendChild(images[i]);
+      }
+      
+      const paragraphs = contentElement.getElementsByTagName('p');
+      for (let i = 0; i < paragraphs.length; i++) {
+        paragraphs[i].classList.add('my-4');
       }
     }
   }, []);
@@ -36,7 +43,7 @@ const PostDetail: React.FC<PostDetailProps> = ({ post }) => {
   };
 
   return (
-    <div className="min-h-screen bg-gray-100">
+    <div>
       <Header />
       <div className="mt-16 bg-black text-white p-4 flex justify-between items-center rounded-lg">
         <h1 className="text-3xl font-bold">{post.title.rendered}</h1>
