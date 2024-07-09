@@ -1,5 +1,4 @@
 import './globals.css';
-import Head from 'next/head';
 import Script from 'next/script';
 import { ReactNode } from 'react';
 
@@ -9,10 +8,6 @@ interface Props {
 
 const Layout: React.FC<Props> = ({ children }) => (
   <html lang="en">
-    <Head>
-      <link rel="icon" href="/images/favicon.ico" />
-      <title>The Genio.soy Post</title>
-    </Head>
     <body className="min-h-screen bg-gray-100">
       <noscript>
         <iframe

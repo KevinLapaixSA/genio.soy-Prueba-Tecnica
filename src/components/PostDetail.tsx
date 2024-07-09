@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import Header from './Header';
 import ImageModal from './ImageModal';
+import 'tailwindcss/tailwind.css';
 
 interface PostDetailProps {
   post: {
@@ -35,7 +36,7 @@ const PostDetail: React.FC<PostDetailProps> = ({ post }) => {
   };
 
   return (
-    <div>
+    <div className="min-h-screen bg-gray-100">
       <Header />
       <div className="mt-16 bg-black text-white p-4 flex justify-between items-center rounded-lg">
         <h1 className="text-3xl font-bold">{post.title.rendered}</h1>

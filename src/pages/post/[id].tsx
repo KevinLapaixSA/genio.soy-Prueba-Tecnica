@@ -1,7 +1,7 @@
 import { GetServerSideProps } from 'next';
 import { getPostById } from '../../services/api/wordpress';
 import PostDetail from '../../components/PostDetail';
-import Layout from '../../app/layout';
+import { Metadata } from 'next';
 
 interface PostPageProps {
   post: {
@@ -11,12 +11,15 @@ interface PostPageProps {
   };
 }
 
+export const generateMetadata = ({ params }: { params: { id: string } }): Metadata => {
+  return {
+    title: `Post ${params.id} - The Genio.soy Post`,
+    description: `Detalle del post ${params.id}`,
+  };
+};
+
 const PostPage: React.FC<PostPageProps> = ({ post }) => {
-  return (
-    <Layout>
-      <PostDetail post={post} />
-    </Layout>
-  );
+  return <PostDetail post={post} />;
 };
 
 export const getServerSideProps: GetServerSideProps = async (context) => {
@@ -31,4 +34,3 @@ export const getServerSideProps: GetServerSideProps = async (context) => {
 };
 
 export default PostPage;
-
