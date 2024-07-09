@@ -2,6 +2,7 @@ import { GetServerSideProps } from 'next';
 import { getPostById } from '../../services/api/wordpress';
 import PostDetail from '../../components/PostDetail';
 import { Metadata } from 'next';
+import '../../app/globals.css'
 
 interface PostPageProps {
   post: {
@@ -19,7 +20,7 @@ export const generateMetadata = ({ params }: { params: { id: string } }): Metada
 };
 
 const PostPage: React.FC<PostPageProps> = ({ post }) => {
-  return <PostDetail post={post} />;
+  return <PostDetail post={post} />
 };
 
 export const getServerSideProps: GetServerSideProps = async (context) => {
